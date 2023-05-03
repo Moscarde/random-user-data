@@ -15,6 +15,6 @@ Um pacote npm que gera dados aleatórios do usuário
 
 ```js
 
-const { randomUser } = require('randon-user-data')
+import { randomUser } from "random-user-data";
 console.log(randomUser())
 ```

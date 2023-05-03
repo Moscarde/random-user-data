@@ -7,7 +7,7 @@ Um pacote npm que gera dados aleatórios do usuário
 1. Instale o pacote
 
 ```sh
-   npm -i eferiado
+   npm -i random-user-data
 ```
 
 2. Utilize ele em seu codigo

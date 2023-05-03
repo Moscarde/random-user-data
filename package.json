@@ -1,11 +1,11 @@
 {
-  "name": "random-user",
+  "name": "random-user-data",
   "version": "1.0.0",
   "description": "Easily get a random user data to run tests or add in Databases",
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Moscarde/RandomUser"
+    "url": "https://github.com/Moscarde/random-user-data"
   },
   "keywords": [
     "random",
@@ -18,5 +18,5 @@
   "devDependencies": {
     "@types/node": "^18.16.3"
   },
-  "homepage": "https://github.com/Moscarde/RandomUser"
+  "homepage": "https://github.com/Moscarde/random-user-data"
 }

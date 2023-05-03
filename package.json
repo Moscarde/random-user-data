@@ -1,15 +1,22 @@
 {
-  "name": "randomname",
+  "name": "random-user",
   "version": "1.0.0",
-  "description": "",
+  "description": "Easily get a random user data to run tests or add in Databases",
   "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Moscarde/RandomUser"
   },
-  "keywords": [],
-  "author": "Moscarde",
+  "keywords": [
+    "random",
+    "user",
+    "random database",
+    "user tests"
+  ],
+  "author": "Gabriel Moscarde",
   "license": "ISC",
   "devDependencies": {
     "@types/node": "^18.16.3"
-  }
+  },
+  "homepage": "https://github.com/Moscarde/RandomUser"
 }

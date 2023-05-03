@@ -1,5 +1,22 @@
-// Creates an object to store names and surnames
-const names = {
+interface Names {
+	brazilian?: {
+		male: Array<string>;
+		female: Array<string>;
+		lastName: Array<string>;
+	};
+	northAmerican?: {
+		male: Array<string>;
+		female: Array<string>;
+		lastName: Array<string>;
+	};
+	latin?: {
+		male: Array<string>;
+		female: Array<string>;
+		lastName: Array<string>;
+	};
+}
+
+export const names: Names = {
 	brazilian: {
 		male: [
 			"João",
@@ -206,7 +223,7 @@ const names = {
 			"Sandra",
 			"Sara"
 		],
-		last: [
+		lastName: [
 			"Silva",
 			"Santos",
 			"Oliveira",
@@ -308,35 +325,5 @@ const names = {
 			"Baptista",
 			"Furtado"
 		]
-	},
-	american: {
-		male: {
-			first: ["John", "Michael"],
-			last: ["Smith", "Johnson"]
-		},
-		female: {
-			first: ["Emily", "Sarah"],
-			last: ["Smith", "Johnson"]
-		}
-	},
-	spanish: {
-		male: {
-			first: ["Pablo", "Javier"],
-			last: ["Garcia", "Hernandez"]
-		},
-		female: {
-			first: ["Sofia", "Carmen"],
-			last: ["Garcia", "Hernandez"]
-		}
 	}
 };
-
-// Function that uses male names
-function useMaleNames() {
-	// Accesses the list of Brazilian male first names
-	const brazilianMaleFirstNames = names.brazilian.male.first;
-	console.log(brazilianMaleFirstNames);
-}
-
-// Exports the names object to be used in other modules
-module.exports = names;

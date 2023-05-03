@@ -1,5 +1,5 @@
 interface Names {
-	brazilian?: {
+	brazilian: {
 		male: Array<string>;
 		female: Array<string>;
 		lastName: Array<string>;

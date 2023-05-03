@@ -7,15 +7,15 @@ export module Functions {
 	 * @param minAge Minimun age
 	 * @param maxAge Maximun age
 	 */
-	export function randomAge(minAge?: number, maxAge?: number): number {
-		return Math.floor(Math.random() * (maxAge - minAge + 1)) + minAge;
+	export function randomAge(minAge: number, maxAge: number):number {
+		return Math.floor(Math.random() * (maxAge | 18 - minAge + 1)) + minAge;
 	}
 
 	/**
 	 * Returns a random First name
 	 * @param genre "m" for male names or "f" for female names
 	 */
-	export function randomFirstName(genre?: string): string {
+	export function randomFirstName(genre?: string) {
 		if (!genre) {
 			const randomPercent = Math.floor(Math.random() * 100);
 			if (randomPercent > 50) {
@@ -51,21 +51,27 @@ export module Functions {
 		return `${year}-${month}-${day}`;
 	}
 
-    export function nameToEmail(name:string):string {
-        let email = name
-        .replace(" ", "")
-        .toLowerCase()
-        .replace(/[ç]/g, 'c')
-        .replace(/[ã]/g, 'a')
-        .replace(/[é]/g, 'e')
-        .replace(/[ô]/g, 'o')
-        .replace(/[í]/g, 'i')
-        .replace(/[ú]/g, 'u')
-        .concat('@email.com')
-        // const corrigido = texto.replace(/[çÇ]/g, 'c').replace(/[ãÃ]/g, 'a');
+	export function nameToEmail(name: string): string {
+		let email = name
+			.replace(" ", "")
+			.toLowerCase()
+			.replace(/[ç]/g, "c")
+			.replace(/[ã]/g, "a")
+			.replace(/[é]/g, "e")
+			.replace(/[ô]/g, "o")
+			.replace(/[í]/g, "i")
+			.replace(/[ú]/g, "u")
+			.concat("@email.com");
+		// const corrigido = texto.replace(/[çÇ]/g, 'c').replace(/[ãÃ]/g, 'a');
 
-        return email
-    }
+		return email;
+	}
 }
 
-export const { randomAge, randomFirstName, randomLastName, randomBirthDate, nameToEmail } = Functions;
+export const {
+	randomAge,
+	randomFirstName,
+	randomLastName,
+	randomBirthDate,
+	nameToEmail
+} = Functions;

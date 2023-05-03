@@ -1,8 +1,8 @@
 {
   "name": "random-user-data",
-  "version": "1.0.0",
+  "version": "1.0.3",
   "description": "Easily get a random user data to run tests or add in Databases",
-  "main": "index.js",
+  "main": "index.ts",
   "repository": {
     "type": "git",
     "url": "https://github.com/Moscarde/random-user-data"
@@ -15,7 +15,7 @@
   ],
   "author": "Gabriel Moscarde",
   "license": "ISC",
-  "devDependencies": {
+  "dependencies": {
     "@types/node": "^18.16.3"
   },
   "homepage": "https://github.com/Moscarde/random-user-data"

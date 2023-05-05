@@ -37,7 +37,7 @@ console.log(randomUser().email)
 
 * Configurações
 ```js
-const gender = 'f'
+const gender = 'f' //'f' = female 'm' = male
 const minAge = 18
 const maxAge = 30
 

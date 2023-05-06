@@ -1,6 +1,7 @@
 node_modules/
 test.ts
-*.js
+test.js
+test.d.js
 *.d.ts
 tsconfig.json
 #

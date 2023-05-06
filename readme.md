@@ -1,6 +1,6 @@
 # random-user-data
 
-Um pacote npm que gera dados aleatórios do usuário
+Um pacote para facilitar o testes de formulários ou interações com banco de dados com dados aleatórios de usuário.
 
 ### Como utilizar o pacote ? 
 

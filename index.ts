@@ -13,6 +13,12 @@ interface Person {
 	birthDate: string;
 }
 
+/**
+ * Return user object { name, email, age, birthDate }
+ * @param genre "m" for male names or "f" for female names
+ * @param minAge Minimun Age
+ * @param genre Maximun Age
+ */
 export function randomUser(
 	genre?: string,
 	minAge?: number,

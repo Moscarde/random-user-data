@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.nameToEmail = exports.randomBirthDate = exports.randomLastName = exports.randomFirstName = exports.randomAge = exports.Functions = void 0;
+exports.randomPhone = exports.nameToEmail = exports.randomBirthDate = exports.randomLastName = exports.randomFirstName = exports.randomAge = exports.Functions = void 0;
 const names_1 = require("./names");
 const utils_1 = require("./utils");
 var Functions;
@@ -70,5 +70,9 @@ var Functions;
         return email;
     }
     Functions.nameToEmail = nameToEmail;
+    function randomPhone() {
+        return "(" + Math.floor(Math.random() * 99) + ")9" + Math.floor(Math.random() * 99999999);
+    }
+    Functions.randomPhone = randomPhone;
 })(Functions = exports.Functions || (exports.Functions = {}));
-exports.randomAge = Functions.randomAge, exports.randomFirstName = Functions.randomFirstName, exports.randomLastName = Functions.randomLastName, exports.randomBirthDate = Functions.randomBirthDate, exports.nameToEmail = Functions.nameToEmail;
+exports.randomAge = Functions.randomAge, exports.randomFirstName = Functions.randomFirstName, exports.randomLastName = Functions.randomLastName, exports.randomBirthDate = Functions.randomBirthDate, exports.nameToEmail = Functions.nameToEmail, exports.randomPhone = Functions.randomPhone;

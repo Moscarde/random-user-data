@@ -66,6 +66,9 @@ export module Functions {
 
 		return email;
 	}
+	export function randomPhone(): string {
+		return "(" + Math.floor(Math.random() * 99) + ")9" + Math.floor(Math.random() * 99999999);
+	}
 }
 
 export const {
@@ -73,5 +76,6 @@ export const {
 	randomFirstName,
 	randomLastName,
 	randomBirthDate,
-	nameToEmail
+	nameToEmail,
+	randomPhone
 } = Functions;

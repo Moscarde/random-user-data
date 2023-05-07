@@ -3,7 +3,8 @@ import {
 	randomFirstName,
 	randomLastName,
 	randomBirthDate,
-	nameToEmail
+	nameToEmail,
+	randomPhone
 } from "./src/functions";
 
 interface Person {
@@ -23,13 +24,14 @@ export function randomUser(
 	genre?: string,
 	minAge?: number,
 	maxAge?: number
-): Person {
+) {
 	const name = `${randomFirstName(genre)} ${randomLastName()}`;
 	const email = nameToEmail(name);
 	const age = randomAge(minAge || 18, maxAge || 60);
 	const birthDate = randomBirthDate(age);
+	const phone = randomPhone()
 
-	const user: Person = { name, email, age, birthDate };
+	const user = { name, email, age, birthDate, phone };
 
 	return user;
 }

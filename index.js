@@ -13,7 +13,8 @@ function randomUser(genre, minAge, maxAge) {
     const email = (0, functions_1.nameToEmail)(name);
     const age = (0, functions_1.randomAge)(minAge || 18, maxAge || 60);
     const birthDate = (0, functions_1.randomBirthDate)(age);
-    const user = { name, email, age, birthDate };
+    const phone = (0, functions_1.randomPhone)();
+    const user = { name, email, age, birthDate, phone };
     return user;
 }
 exports.randomUser = randomUser;

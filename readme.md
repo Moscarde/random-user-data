@@ -23,6 +23,7 @@ console.log(randomUser())
 //   email: 'alineribeiro@email.com',
 //   age: 60,
 //   birthDate: '1963-7-11'
+//   phone: '(67)985341727'
 // }
 ```
 
@@ -48,5 +49,6 @@ console.log(randomUser(gender, minAge, maxAge))
 //   email: 'alineribeiro@email.com',
 //   age: 20,
 //   birthDate: '2003-2-19'
+//   phone: '(67)985341727'
 // }
 ```

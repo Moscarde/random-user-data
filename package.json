@@ -1,6 +1,6 @@
 {
   "name": "random-user-data",
-  "version": "1.0.13",
+  "version": "1.0.14",
   "description": "Easily get a random user data to run tests or add in Databases",
   "main": "index.js",
   "types": "index.d.ts",

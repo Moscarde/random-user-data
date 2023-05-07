@@ -11,7 +11,8 @@ var Functions;
      * @param maxAge Maximun age
      */
     function randomAge(minAge, maxAge) {
-        return Math.floor(Math.random() * (maxAge | 18 - minAge + 1)) + minAge;
+        const age = Math.floor(Math.random() * (maxAge - minAge + 1)) + minAge;
+        return age;
     }
     Functions.randomAge = randomAge;
     /**
@@ -71,7 +72,10 @@ var Functions;
     }
     Functions.nameToEmail = nameToEmail;
     function randomPhone() {
-        return "(" + Math.floor(Math.random() * 99) + ")9" + Math.floor(Math.random() * 99999999);
+        return ("(" +
+            Math.floor(Math.random() * 99) +
+            ")9" +
+            Math.floor(Math.random() * 99999999));
     }
     Functions.randomPhone = randomPhone;
 })(Functions = exports.Functions || (exports.Functions = {}));

@@ -11,6 +11,7 @@ const functions_1 = require("./src/functions");
 function randomUser(genre, minAge, maxAge) {
     const name = `${(0, functions_1.randomFirstName)(genre)} ${(0, functions_1.randomLastName)()}`;
     const email = (0, functions_1.nameToEmail)(name);
+    // console.log(minAge, maxAge)
     const age = (0, functions_1.randomAge)(minAge || 18, maxAge || 60);
     const birthDate = (0, functions_1.randomBirthDate)(age);
     const phone = (0, functions_1.randomPhone)();

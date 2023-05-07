@@ -7,8 +7,9 @@ export module Functions {
 	 * @param minAge Minimun age
 	 * @param maxAge Maximun age
 	 */
-	export function randomAge(minAge: number, maxAge: number):number {
-		return Math.floor(Math.random() * (maxAge | 18 - minAge + 1)) + minAge;
+	export function randomAge(minAge: number, maxAge: number): number {
+		const age = Math.floor(Math.random() * (maxAge - minAge + 1)) + minAge;
+		return age;
 	}
 
 	/**
@@ -67,7 +68,12 @@ export module Functions {
 		return email;
 	}
 	export function randomPhone(): string {
-		return "(" + Math.floor(Math.random() * 99) + ")9" + Math.floor(Math.random() * 99999999);
+		return (
+			"(" +
+			Math.floor(Math.random() * 99) +
+			")9" +
+			Math.floor(Math.random() * 99999999)
+		);
 	}
 }
 

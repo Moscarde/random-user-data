@@ -27,6 +27,7 @@ export function randomUser(
 ) {
 	const name = `${randomFirstName(genre)} ${randomLastName()}`;
 	const email = nameToEmail(name);
+	// console.log(minAge, maxAge)
 	const age = randomAge(minAge || 18, maxAge || 60);
 	const birthDate = randomBirthDate(age);
 	const phone = randomPhone()

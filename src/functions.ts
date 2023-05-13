@@ -3,39 +3,26 @@ import { randomNumber } from "./utils";
 
 export module Functions {
 	interface Options {
-		genre: "male" | "female";
+		gender: "male" | "female";
 		minAge: number;
 		maxAge: number;
 	}
 	/**
-	 * Return default options { genre, minAge, maxAge }
+	 * Return processed options { genre, minAge, maxAge }
 	 */
 	export function processOptions(
-		options:
-			| { genre?: "male" | "female"; minAge?: number; maxAge?: number }
-			| undefined
+		options?: { gender?: "male" | "female"; minAge?: number; maxAge?: number }
 	): Options {
-		if (!options) {
-			const newOptions: Options = { genre: randomGender(), minAge: 18, maxAge: 60 };
-			return newOptions;
-		}
-
-		if (!options.genre) {
-			options.genre = randomGender();
-		}
-
-		if (!options.minAge) {
-			options.minAge = 18;
-		}
-
-		if (!options.maxAge) {
-			options.maxAge = 60;
-		}
+		const defaultOptions: Options = {
+			gender: randomGender(),
+			minAge: 18,
+			maxAge: 60,
+		  };
 
 		const newOptions: Options = {
-			genre: options.genre,
-			minAge: options.minAge,
-			maxAge: options.maxAge
+			gender: options?.gender || defaultOptions.gender,
+			minAge: options?.minAge || defaultOptions.minAge,
+			maxAge: options?.maxAge || defaultOptions.maxAge,
 		}
 		return newOptions;
 	}

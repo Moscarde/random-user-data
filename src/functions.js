@@ -6,26 +6,18 @@ const utils_1 = require("./utils");
 var Functions;
 (function (Functions) {
     /**
-     * Return default options { genre, minAge, maxAge }
+     * Return processed options { genre, minAge, maxAge }
      */
     function processOptions(options) {
-        if (!options) {
-            const newOptions = { genre: randomGender(), minAge: 18, maxAge: 60 };
-            return newOptions;
-        }
-        if (!options.genre) {
-            options.genre = randomGender();
-        }
-        if (!options.minAge) {
-            options.minAge = 18;
-        }
-        if (!options.maxAge) {
-            options.maxAge = 60;
-        }
+        const defaultOptions = {
+            gender: randomGender(),
+            minAge: 18,
+            maxAge: 60,
+        };
         const newOptions = {
-            genre: options.genre,
-            minAge: options.minAge,
-            maxAge: options.maxAge
+            gender: (options === null || options === void 0 ? void 0 : options.gender) || defaultOptions.gender,
+            minAge: (options === null || options === void 0 ? void 0 : options.minAge) || defaultOptions.minAge,
+            maxAge: (options === null || options === void 0 ? void 0 : options.maxAge) || defaultOptions.maxAge,
         };
         return newOptions;
     }

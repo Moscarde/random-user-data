@@ -9,8 +9,8 @@ import {
 } from "./src/functions";
 
 /**
- * Return user object { name, email, age, birthDate }
- * @param genre "m" for male names or "f" for female names
+ * Return user object { name, email, age, birthDate, phone }
+ * @param gender "male" for male names or "female" for female names
  * @param minAge Minimun Age
  * @param genre Maximun Age
  */
@@ -19,12 +19,11 @@ export function randomUser(options?: {
 	minAge?: number;
 	maxAge?: number;
 }) {
-	const { genre, minAge, maxAge } = processOptions(options);
+	const { gender, minAge, maxAge } = processOptions(options);
 
-	const name = `${randomFirstName(genre)} ${randomLastName()}`;
+	const name = `${randomFirstName(gender)} ${randomLastName()}`;
 	const email = nameToEmail(name);
-	// console.log(minAge, maxAge)
-	const age = randomAge(minAge || 18, maxAge || 60);
+	const age = randomAge(minAge, maxAge);
 	const birthDate = randomBirthDate(age);
 	const phone = randomPhone();
 

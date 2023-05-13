@@ -38,17 +38,14 @@ console.log(randomUser().email)
 
 * Configurações
 ```js
-const gender = 'f' //'f' = female 'm' = male
-const minAge = 18
-const maxAge = 30
 
 import { randomUser } from "random-user-data";
-console.log(randomUser(gender, minAge, maxAge))
+console.log(randomUser({genre: 'female', minAge: 18, maxAge: 25}))
 // {
-//   name: 'Aline Ribeiro',
-//   email: 'alineribeiro@email.com',
-//   age: 20,
-//   birthDate: '2003-2-19'
-//   phone: '(67)985341727'
+//   name: 'Andréa Campos',
+//   email: 'andreacampos@email.com',
+//   age: 21,
+//   birthDate: '2002-2-18',
+//   phone: '(31)943881364'
 // }
 ```

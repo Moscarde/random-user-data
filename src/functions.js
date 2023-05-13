@@ -1,10 +1,35 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.randomPhone = exports.nameToEmail = exports.randomBirthDate = exports.randomLastName = exports.randomFirstName = exports.randomAge = exports.Functions = void 0;
+exports.processOptions = exports.randomGender = exports.randomPhone = exports.nameToEmail = exports.randomBirthDate = exports.randomLastName = exports.randomFirstName = exports.randomAge = exports.Functions = void 0;
 const names_1 = require("./names");
 const utils_1 = require("./utils");
 var Functions;
 (function (Functions) {
+    /**
+     * Return default options { genre, minAge, maxAge }
+     */
+    function processOptions(options) {
+        if (!options) {
+            const newOptions = { genre: randomGender(), minAge: 18, maxAge: 60 };
+            return newOptions;
+        }
+        if (!options.genre) {
+            options.genre = randomGender();
+        }
+        if (!options.minAge) {
+            options.minAge = 18;
+        }
+        if (!options.maxAge) {
+            options.maxAge = 60;
+        }
+        const newOptions = {
+            genre: options.genre,
+            minAge: options.minAge,
+            maxAge: options.maxAge
+        };
+        return newOptions;
+    }
+    Functions.processOptions = processOptions;
     /**
      * Returns a random age
      * @param minAge Minimun age
@@ -17,26 +42,29 @@ var Functions;
     Functions.randomAge = randomAge;
     /**
      * Returns a random First name
-     * @param genre "m" for male names or "f" for female names
+     * @param genre "male" | "female"
      */
     function randomFirstName(genre) {
-        if (!genre) {
-            const randomPercent = Math.floor(Math.random() * 100);
-            if (randomPercent > 50) {
-                genre = "f";
-            }
-            else {
-                genre = "m";
-            }
-        }
-        if (genre === "m") {
+        if (genre === "male") {
             return names_1.names.brazilian.male[(0, utils_1.randomNumber)()];
         }
-        else if (genre === "f") {
+        else if (genre === "female") {
             return names_1.names.brazilian.female[(0, utils_1.randomNumber)()];
         }
     }
     Functions.randomFirstName = randomFirstName;
+    /**
+     * Returns a random gender
+     */
+    function randomGender() {
+        if (Math.floor(Math.random() * 100) > 50) {
+            return "male";
+        }
+        else {
+            return "female";
+        }
+    }
+    Functions.randomGender = randomGender;
     /**
      * Returns a random Last name
      */
@@ -79,4 +107,4 @@ var Functions;
     }
     Functions.randomPhone = randomPhone;
 })(Functions = exports.Functions || (exports.Functions = {}));
-exports.randomAge = Functions.randomAge, exports.randomFirstName = Functions.randomFirstName, exports.randomLastName = Functions.randomLastName, exports.randomBirthDate = Functions.randomBirthDate, exports.nameToEmail = Functions.nameToEmail, exports.randomPhone = Functions.randomPhone;
+exports.randomAge = Functions.randomAge, exports.randomFirstName = Functions.randomFirstName, exports.randomLastName = Functions.randomLastName, exports.randomBirthDate = Functions.randomBirthDate, exports.nameToEmail = Functions.nameToEmail, exports.randomPhone = Functions.randomPhone, exports.randomGender = Functions.randomGender, exports.processOptions = Functions.processOptions;

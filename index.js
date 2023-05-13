@@ -8,7 +8,8 @@ const functions_1 = require("./src/functions");
  * @param minAge Minimun Age
  * @param genre Maximun Age
  */
-function randomUser(genre, minAge, maxAge) {
+function randomUser(options) {
+    const { genre, minAge, maxAge } = (0, functions_1.processOptions)(options);
     const name = `${(0, functions_1.randomFirstName)(genre)} ${(0, functions_1.randomLastName)()}`;
     const email = (0, functions_1.nameToEmail)(name);
     // console.log(minAge, maxAge)

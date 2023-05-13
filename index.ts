@@ -4,15 +4,9 @@ import {
 	randomLastName,
 	randomBirthDate,
 	nameToEmail,
-	randomPhone
+	randomPhone,
+	processOptions
 } from "./src/functions";
-
-interface Person {
-	name: string;
-	email: string;
-	age: number;
-	birthDate: string;
-}
 
 /**
  * Return user object { name, email, age, birthDate }
@@ -20,17 +14,19 @@ interface Person {
  * @param minAge Minimun Age
  * @param genre Maximun Age
  */
-export function randomUser(
-	genre?: string,
-	minAge?: number,
-	maxAge?: number
-) {
+export function randomUser(options?: {
+	genre?: "male" | "female";
+	minAge?: number;
+	maxAge?: number;
+}) {
+	const { genre, minAge, maxAge } = processOptions(options);
+
 	const name = `${randomFirstName(genre)} ${randomLastName()}`;
 	const email = nameToEmail(name);
 	// console.log(minAge, maxAge)
 	const age = randomAge(minAge || 18, maxAge || 60);
 	const birthDate = randomBirthDate(age);
-	const phone = randomPhone()
+	const phone = randomPhone();
 
 	const user = { name, email, age, birthDate, phone };
 

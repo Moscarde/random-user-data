@@ -2,6 +2,44 @@ import { names } from "./names";
 import { randomNumber } from "./utils";
 
 export module Functions {
+	interface Options {
+		genre: "male" | "female";
+		minAge: number;
+		maxAge: number;
+	}
+	/**
+	 * Return default options { genre, minAge, maxAge }
+	 */
+	export function processOptions(
+		options:
+			| { genre?: "male" | "female"; minAge?: number; maxAge?: number }
+			| undefined
+	): Options {
+		if (!options) {
+			const newOptions: Options = { genre: randomGender(), minAge: 18, maxAge: 60 };
+			return newOptions;
+		}
+
+		if (!options.genre) {
+			options.genre = randomGender();
+		}
+
+		if (!options.minAge) {
+			options.minAge = 18;
+		}
+
+		if (!options.maxAge) {
+			options.maxAge = 60;
+		}
+
+		const newOptions: Options = {
+			genre: options.genre,
+			minAge: options.minAge,
+			maxAge: options.maxAge
+		}
+		return newOptions;
+	}
+
 	/**
 	 * Returns a random age
 	 * @param minAge Minimun age
@@ -14,22 +52,24 @@ export module Functions {
 
 	/**
 	 * Returns a random First name
-	 * @param genre "m" for male names or "f" for female names
+	 * @param genre "male" | "female"
 	 */
-	export function randomFirstName(genre?: string) {
-		if (!genre) {
-			const randomPercent = Math.floor(Math.random() * 100);
-			if (randomPercent > 50) {
-				genre = "f";
-			} else {
-				genre = "m";
-			}
-		}
-
-		if (genre === "m") {
+	export function randomFirstName(genre: "male" | "female") {
+		if (genre === "male") {
 			return names.brazilian.male[randomNumber()];
-		} else if (genre === "f") {
+		} else if (genre === "female") {
 			return names.brazilian.female[randomNumber()];
+		}
+	}
+
+	/**
+	 * Returns a random gender
+	 */
+	export function randomGender(): "male" | "female" {
+		if (Math.floor(Math.random() * 100) > 50) {
+			return "male";
+		} else {
+			return "female";
 		}
 	}
 
@@ -83,5 +123,7 @@ export const {
 	randomLastName,
 	randomBirthDate,
 	nameToEmail,
-	randomPhone
+	randomPhone,
+	randomGender,
+	processOptions
 } = Functions;
